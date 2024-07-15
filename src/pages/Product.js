@@ -5,7 +5,7 @@ function Product() {
     const param = useParams()
     const [product, setproduct] = useState()
     useEffect(() => {
-        fetch(`http://localhost:9000/products/${param.id}`)
+        fetch(`https://vivacious-gentle-divan.glitch.me/products/${param.id}`)
             .then(res => res.json())
             .then(data => setproduct(data))
     })
