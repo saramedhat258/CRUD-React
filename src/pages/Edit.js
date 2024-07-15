@@ -7,18 +7,17 @@ function Edit() {
     const [product, setproduct] = useState({ title: '', price: '', description: '',category:'', image: '', rating: { count: '', rate: ''} })
     const nav = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:9000/products/${param.id}`)
+        axios.get(`https://vivacious-gentle-divan.glitch.me/products/${param.id}`)
             .then(res => setproduct(res.data))
             .catch(err => console.log(err))
     }, [])
     const submit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:9000/products/${param.id}`, product)
+        axios.put(`https://vivacious-gentle-divan.glitch.me/products/${param.id}`, product)
             .then(
                 nav('/products')
             )
     }
-    console.log({...product})
     return (
         <>
             <form onSubmit={submit}>
