@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 function Allproducts() {
     const [product, setproducts] = useState([])
     const getallproducts = () => {
-        fetch("http://localhost:9000/products")
+        fetch("https://vivacious-gentle-divan.glitch.me/products")
             .then(res => res.json())
             .then(data => setproducts(data))
     }
@@ -21,7 +21,7 @@ function Allproducts() {
             showCancelButton: true,
         })
             .then(data =>{if (data.isConfirmed) {
-                fetch(`http://localhost:9000/products/${proid}`, {
+                fetch(`https://vivacious-gentle-divan.glitch.me/products/${proid}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
