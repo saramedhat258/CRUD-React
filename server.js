@@ -26,7 +26,7 @@ app.post('/products', upload.single('image'), async (req, res) => {
         }
 
         // Forward the data to JSON Server
-        const response = await axios.post('http://localhost:9000/products', productData);
+        const response = await axios.post('https://vivacious-gentle-divan.glitch.me//products', productData);
         res.status(response.status).json(response.data);
     } catch (error) {
         console.error("Error uploading file or forwarding data:", error);
