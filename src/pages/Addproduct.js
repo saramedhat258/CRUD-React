@@ -57,10 +57,10 @@ function AddProduct() {
             description: product.description,
             category: product.category,
             rating: product.rating,
-            image: product.image ? `http://localhost:3001/uploads/${product.image.name}` : null,
+            image: product.image ? `https://important-tidy-reptile.glitch.me/${product.image.name}` : null,
         }
         formData.append('productData', JSON.stringify(productData));
-        axios.post("http://localhost:3001/products", formData, {
+        axios.post("https://important-tidy-reptile.glitch.me/products", formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             }
@@ -76,7 +76,7 @@ function AddProduct() {
         const categoryExists = categories.some(cat => cat.type.toLowerCase() === newCategory.toLowerCase());
         if (!categoryExists) {
             const newCategoryData = { id: (categories.length + 1).toString(), type: newCategory };
-            axios.post("http://localhost:9000/catigories", newCategoryData);
+            axios.post("https://vivacious-gentle-divan.glitch.me/catigories", newCategoryData);
             setCategories([...categories, newCategoryData]);
         }
     };
