@@ -13,7 +13,7 @@ function AddProduct() {
     /* fetch all products  */
 
     const fetchproducts = () => {
-        fetch("http://localhost:9000/products")
+        fetch("https://vivacious-gentle-divan.glitch.me/products")
             .then(res => res.json())
             .then(data => {
                 setAllProducts(data);
@@ -24,7 +24,7 @@ function AddProduct() {
     /* fetch categorise  */
 
     const fetchcategory = () => {
-        fetch("http://localhost:9000/catigories")
+        fetch("https://vivacious-gentle-divan.glitch.me/catigories")
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
